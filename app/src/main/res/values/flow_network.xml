@@ -1,0 +1,34 @@
+<resources>
+    <string name="flow_registry_title">Recent bounded flow registry</string>
+    <string name="flow_registry_body">Aggregated metadata is process-local and capacity-bounded. DNS labels are shown only as per-session hashes by default.</string>
+    <string name="flow_registry_empty">No bounded flow snapshot is available while monitoring is stopped.</string>
+    <string name="flow_registry_evicted">Older flow entries evicted by capacity: %1$d</string>
+    <string name="flow_registry_row">%1$s · %2$s · %3$d packets · %4$d bytes</string>
+    <string name="flow_registry_detail_title">Selected flow detail</string>
+    <string name="flow_registry_detail_endpoint">Observed endpoint: %1$s</string>
+    <string name="flow_registry_detail_attribution">Attribution: %1$s</string>
+    <string name="flow_registry_detail_time">Observed time: %1$d–%2$d</string>
+    <string name="flow_registry_select">Select</string>
+    <string name="flow_registry_unknown">unknown attribution</string>
+    <string name="flow_registry_known">known attribution</string>
+    <string name="flow_registry_dns_hashed">DNS label: hashed per session</string>
+    <string name="flow_registry_dns_not_captured">DNS label: not captured</string>
+    <string name="flow_registry_dns_plaintext_omitted">DNS label: plaintext omitted from this view</string>
+    <string name="flow_review_title">Neutral review indicators</string>
+    <string name="flow_review_body">These deterministic cues help a human review metadata. They are not malware, threat, or attribution verdicts.</string>
+    <string name="flow_review_unknown_attribution">Unknown app attribution (%1$d)</string>
+    <string name="flow_review_repeated_blocks">Repeated confirmed blocks (%1$d)</string>
+    <string name="flow_review_high_volume">Reviewed high volume (%1$d packets)</string>
+    <string name="flow_review_many_destinations">Many destinations observed (%1$d)</string>
+    <string name="flow_review_parser_limitation">Parser limitation observed (%1$d)</string>
+    <string name="firewall_domain_bound">Domain rule active: %1$d address(es) seen for this name.</string>
+    <string name="firewall_domain_unbound">Domain rule waiting: this app has not seen this name resolve yet, so it cannot be enforced.</string>
+    <string name="firewall_domain_no_session">Domain rule waiting: start network monitoring so this name can be matched to an address.</string>
+    <string name="firewall_domain_names_omitted">Domain rule waiting: web address recording is off, so names cannot be matched.</string>
+    <string name="destinations_title">Where traffic went</string>
+    <string name="destinations_body">Addresses that were seen resolving together, so you can tell which endpoints belong to the same destination. This does not say who owns them.</string>
+    <string name="destinations_named">%1$s — %2$d address(es)</string>
+    <string name="destinations_unnamed">Unnamed destination — %1$d address(es)</string>
+    <string name="destinations_fresh">Seen recently</string>
+    <string name="destinations_empty">Nothing yet. Destinations appear once monitoring has seen a name resolve.</string>
+</resources>

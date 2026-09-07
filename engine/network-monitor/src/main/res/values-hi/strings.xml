@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="network_monitor_channel_name">नेटवर्क मॉनिटरिंग</string>
+    <string name="network_monitor_channel_description">लोकल VPN नेटवर्क मॉनिटरिंग सक्रिय होने पर सूचना दिखाता है।</string>
+    <string name="network_monitor_notification_title">लोकल नेटवर्क मॉनिटरिंग</string>
+    <string name="network_monitor_notification_preparing">लोकल मॉनिटरिंग तैयार हो रही है</string>
+    <string name="network_monitor_notification_active">इस डिवाइस पर मेटाडेटा मॉनिटर किया जा रहा है</string>
+    <string name="network_monitor_notification_stopping">लोकल मॉनिटरिंग रोकी जा रही है</string>
+    <string name="network_monitor_stop_action">रोकें</string>
+</resources>

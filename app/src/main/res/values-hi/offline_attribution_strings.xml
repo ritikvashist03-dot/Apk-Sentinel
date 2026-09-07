@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="offline_attribution_title">ऑफ़लाइन देश और नेटवर्क संदर्भ</string>
+    <string name="offline_attribution_body">प्रकाशक द्वारा हस्ताक्षरित स्थानीय IP आवंटन बंडल आयात करें। यह कोई ऑनलाइन खोज नहीं करता और आपका ट्रैफ़िक कहीं नहीं भेजता।</string>
+    <string name="offline_attribution_active">सक्रिय डेटा: %1$s, संस्करण %2$d</string>
+    <string name="offline_attribution_prefixes">सत्यापित नेटवर्क प्रीफ़िक्स: %1$d</string>
+    <string name="offline_attribution_missing">कोई सत्यापित ऑफ़लाइन एट्रिब्यूशन डेटा इंस्टॉल नहीं है।</string>
+    <string name="offline_attribution_choose">हस्ताक्षरित एट्रिब्यूशन डेटा चुनें</string>
+    <string name="offline_attribution_selected">चुना गया: %1$s</string>
+    <string name="offline_attribution_signature">प्रकाशक हस्ताक्षर</string>
+    <string name="offline_attribution_signature_hint">उसी प्रकाशक द्वारा दिया गया अलग Base64 हस्ताक्षर पेस्ट करें।</string>
+    <string name="offline_attribution_verify">सत्यापित करके स्थानीय रूप से इंस्टॉल करें</string>
+    <string name="offline_attribution_working">हस्ताक्षरित डेटा जाँचा जा रहा है…</string>
+    <string name="offline_attribution_read_failed">यह दस्तावेज़ 900 KB सुरक्षा सीमा के भीतर पढ़ा नहीं जा सका।</string>
+    <string name="offline_attribution_limitation">देश और नेटवर्क-प्रदाता डेटा केवल IP आवंटन बताता है। यह किसी व्यक्ति का स्थान, ऐप का उद्देश्य या जोखिम निष्कर्ष नहीं है। बदलाव अगले निगरानी सत्र पर लागू होते हैं।</string>
+    <string name="offline_attribution_failure_dataset">ऑफ़लाइन एट्रिब्यूशन डेटा उपलब्ध नहीं है।</string>
+    <string name="offline_attribution_failure_size">एट्रिब्यूशन दस्तावेज़ समर्थित आकार के बाहर है।</string>
+    <string name="offline_attribution_failure_format">एट्रिब्यूशन दस्तावेज़ का प्रारूप अमान्य है।</string>
+    <string name="offline_attribution_failure_entries">एट्रिब्यूशन दस्तावेज़ में बहुत अधिक प्रविष्टियाँ हैं।</string>
+    <string name="offline_attribution_failure_time">एट्रिब्यूशन संस्करण या समय रिकॉर्ड अमान्य है।</string>
+    <string name="offline_attribution_failure_expired">एट्रिब्यूशन दस्तावेज़ की अवधि समाप्त हो गई है।</string>
+    <string name="offline_attribution_failure_future">एट्रिब्यूशन दस्तावेज़ की तारीख बहुत आगे की है।</string>
+    <string name="offline_attribution_failure_clock">डिवाइस घड़ी इस अपडेट को सुरक्षित रूप से सत्यापित नहीं कर सकती।</string>
+    <string name="offline_attribution_failure_rollback">पुराना या दोहराया गया एट्रिब्यूशन संस्करण अस्वीकार हुआ।</string>
+    <string name="offline_attribution_failure_key">प्रकाशक सत्यापन कुंजी उपलब्ध नहीं है या मेल नहीं खाती।</string>
+    <string name="offline_attribution_failure_signature">प्रकाशक हस्ताक्षर अमान्य है।</string>
+    <string name="offline_attribution_failure_entry">एक या अधिक नेटवर्क प्रविष्टियाँ अमान्य या दोहराई गई हैं।</string>
+    <string name="offline_attribution_failure_storage">सुरक्षित स्थानीय एट्रिब्यूशन संग्रह उपलब्ध नहीं है।</string>
+</resources>

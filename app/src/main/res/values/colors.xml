@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="launcher_background">#0B6554</color>
+    <!-- Matches SentinelLight.background so the pre-Compose window does not flash. -->
+    <color name="sentinel_window_background">#F4F7F6</color>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sentinel_state_on">On</string>
+    <string name="sentinel_state_off">Off</string>
+    <string name="sentinel_list_showing">Showing %1$d of %2$d</string>
+    <string name="sentinel_list_show_more">Show %1$d more</string>
+    <string name="sentinel_list_show_less">Show less</string>
+    <string name="sentinel_section_expanded">Expanded</string>
+    <string name="sentinel_section_collapsed">Collapsed</string>
+</resources>

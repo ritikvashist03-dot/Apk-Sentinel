@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sentinel_state_on">चालू</string>
+    <string name="sentinel_state_off">बंद</string>
+    <string name="sentinel_list_showing">%2$d में से %1$d दिखाए जा रहे हैं</string>
+    <string name="sentinel_list_show_more">%1$d और दिखाएँ</string>
+    <string name="sentinel_list_show_less">कम दिखाएँ</string>
+    <string name="sentinel_section_expanded">खुला हुआ</string>
+    <string name="sentinel_section_collapsed">बंद</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Matches SentinelDark.background so the pre-Compose window does not flash. -->
+    <color name="sentinel_window_background">#0D1513</color>
+</resources>

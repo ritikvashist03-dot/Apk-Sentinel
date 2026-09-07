@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ux_destination_exports">रिपोर्ट और एक्सपोर्ट</string>
+    <string name="ux_destination_exports_short">एक्सपोर्ट</string>
+    <string name="exports_title">रिपोर्ट और एक्सपोर्ट</string>
+    <string name="exports_subtitle">यह ऐप जो कुछ फ़ाइल में सहेज सकता है, सब एक जगह। फ़ाइलें Android के अपने सेव डायलॉग से लिखी जाती हैं, इसलिए जगह आप चुनते हैं।</string>
+    <string name="exports_privacy_note">आप जो भी सहेजते हैं वह इस ऐप के निजी स्टोरेज से बाहर चला जाता है। बाद में ऐप डेटा मिटाने से पहले सहेजी गई फ़ाइल नहीं हटती।</string>
+
+    <string name="exports_group_apk">ऐप या APK जाँचना</string>
+    <string name="exports_apk_report_title">ऐप जाँच रिपोर्ट</string>
+    <string name="exports_apk_report_body">APK जाँच में मिली जानकारी का सारांश। किसी और को भेजने के लिए रेडैक्टेड संस्करण सहेजें, पूरा विवरण रखने के लिए तकनीकी संस्करण।</string>
+    <string name="exports_apk_manifest_title">पढ़ने योग्य मैनिफेस्ट</string>
+    <string name="exports_apk_manifest_body">किसी ऐप की डिकोड की गई AndroidManifest.xml, पढ़ने योग्य टेक्स्ट के रूप में सहेजी गई।</string>
+    <string name="exports_apk_artifact_title">ऐप फ़ाइल और आइकन</string>
+    <string name="exports_apk_artifact_body">किसी इंस्टॉल ऐप की पैकेज फ़ाइलें या आइकन सहेजें। स्प्लिट पैकेज सेट के रूप में सहेजे जाते हैं और दोबारा इंस्टॉल होने की गारंटी नहीं है।</string>
+
+    <string name="exports_group_network">नेटवर्क गतिविधि</string>
+    <string name="exports_network_flow_title">कनेक्शन सारांश</string>
+    <string name="exports_network_flow_body">मॉनिटरिंग के दौरान दिखे कनेक्शनों की रेडैक्टेड सूची। एंडपॉइंट पते, DNS मान और ऐप पहचानकर्ता शामिल नहीं होते।</string>
+    <string name="exports_network_capture_title">कच्ची कैप्चर फ़ाइल</string>
+    <string name="exports_network_capture_body">Wireshark जैसे टूल के लिए PCAPNG रिकॉर्डिंग। इसमें पते और बिना एन्क्रिप्शन वाली सामग्री हो सकती है, इसलिए सहेजी गई फ़ाइल को संवेदनशील मानें।</string>
+    <string name="exports_network_settings_title">आपकी सेटिंग्स</string>
+    <string name="exports_network_settings_body">आपके नियम और प्राथमिकताएँ, ताकि उन्हें दूसरे डिवाइस पर ले जा सकें। कुंजियाँ, सहमतियाँ और कैप्चर डेटा कभी शामिल नहीं होते।</string>
+</resources>

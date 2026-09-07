@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onboarding_language_title">अपनी भाषा चुनें</string>
+    <string name="onboarding_language_body">आप इसे बाद में Privacy में बदल सकते हैं।</string>
+    <string name="onboarding_language_required">आगे बढ़ने के लिए एक भाषा चुनें।</string>
+    <string name="privacy_language_title">भाषा</string>
+    <string name="privacy_language_body">चुनें कि APK Sentinel का इंटरफ़ेस कैसे दिखे। इससे निरीक्षण परिणाम नहीं बदलते और ऐप डेटा नहीं मिटता।</string>
+    <string name="language_system_default">सिस्टम डिफ़ॉल्ट</string>
+    <string name="language_system_default_description">Android सेटिंग में चुनी गई भाषा का उपयोग करें।</string>
+    <string name="language_system_default_content_description">सिस्टम की डिफ़ॉल्ट भाषा का उपयोग करें</string>
+    <string name="language_english">English</string>
+    <string name="language_english_description">APK Sentinel को अंग्रेज़ी में दिखाएँ।</string>
+    <string name="language_english_content_description">APK Sentinel को अंग्रेज़ी में दिखाएँ</string>
+    <string name="language_hindi">हिन्दी</string>
+    <string name="language_hindi_description">APK Sentinel को हिन्दी में दिखाएँ।</string>
+    <string name="language_hindi_content_description">APK Sentinel को हिन्दी में दिखाएँ</string>
+</resources>

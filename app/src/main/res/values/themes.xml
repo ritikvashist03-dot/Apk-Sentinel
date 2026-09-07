@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Edge-to-edge is enabled in MainActivity. The system bars must stay
+      transparent so Compose draws behind them and applies its own insets;
+      an opaque bar colour here fights enableEdgeToEdge() and is ignored
+      outright on API 35+.
+    -->
+    <style name="Theme.ApkSentinel" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@color/sentinel_window_background</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+</resources>

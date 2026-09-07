@@ -1,0 +1,6 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Core antivirus/security inventory use; requires a Play Console declaration and review. -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <!-- Special access is optional; the UI links to Settings and reports UNKNOWN without it. -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+</manifest>

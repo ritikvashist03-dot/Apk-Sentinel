@@ -1,0 +1,34 @@
+<resources>
+    <string name="flow_registry_title">हाल की सीमित फ़्लो रजिस्ट्री</string>
+    <string name="flow_registry_body">एकत्र मेटाडेटा प्रक्रिया-स्थानीय और क्षमता-सीमित है। DNS लेबल डिफ़ॉल्ट रूप से केवल प्रति-सत्र हैश हैं।</string>
+    <string name="flow_registry_empty">मॉनिटरिंग रुकने पर कोई सीमित फ़्लो स्नैपशॉट उपलब्ध नहीं।</string>
+    <string name="flow_registry_evicted">क्षमता के कारण हटाए गए पुराने फ़्लो: %1$d</string>
+    <string name="flow_registry_row">%1$s · %2$s · %3$d पैकेट · %4$d बाइट</string>
+    <string name="flow_registry_detail_title">चयनित फ़्लो विवरण</string>
+    <string name="flow_registry_detail_endpoint">देखा गया एंडपॉइंट: %1$s</string>
+    <string name="flow_registry_detail_attribution">एट्रिब्यूशन: %1$s</string>
+    <string name="flow_registry_detail_time">देखा गया समय: %1$d–%2$d</string>
+    <string name="flow_registry_select">चुनें</string>
+    <string name="flow_registry_unknown">एट्रिब्यूशन अज्ञात</string>
+    <string name="flow_registry_known">एट्रिब्यूशन ज्ञात</string>
+    <string name="flow_registry_dns_hashed">DNS लेबल: प्रति-सत्र हैश</string>
+    <string name="flow_registry_dns_not_captured">DNS लेबल: कैप्चर नहीं</string>
+    <string name="flow_registry_dns_plaintext_omitted">DNS लेबल: इस दृश्य से plaintext हटाया गया</string>
+    <string name="flow_review_title">तटस्थ समीक्षा संकेत</string>
+    <string name="flow_review_body">ये निश्चित संकेत मानव को मेटाडेटा की समीक्षा में मदद करते हैं। ये मैलवेयर, खतरे या एट्रिब्यूशन का निर्णय नहीं हैं।</string>
+    <string name="flow_review_unknown_attribution">ऐप एट्रिब्यूशन अज्ञात (%1$d)</string>
+    <string name="flow_review_repeated_blocks">बार-बार पुष्टि किए गए ब्लॉक (%1$d)</string>
+    <string name="flow_review_high_volume">समीक्षित उच्च वॉल्यूम (%1$d पैकेट)</string>
+    <string name="flow_review_many_destinations">कई डेस्टिनेशन देखे गए (%1$d)</string>
+    <string name="flow_review_parser_limitation">पार्सर सीमा देखी गई (%1$d)</string>
+    <string name="firewall_domain_bound">डोमेन नियम सक्रिय: इस नाम के लिए %1$d पते दिखे।</string>
+    <string name="firewall_domain_unbound">डोमेन नियम प्रतीक्षा में: इस नाम को हल होते अभी नहीं देखा गया, इसलिए इसे लागू नहीं किया जा सकता।</string>
+    <string name="firewall_domain_no_session">डोमेन नियम प्रतीक्षा में: नेटवर्क मॉनिटरिंग शुरू करें ताकि यह नाम किसी पते से मिलाया जा सके।</string>
+    <string name="firewall_domain_names_omitted">डोमेन नियम प्रतीक्षा में: वेब पता रिकॉर्डिंग बंद है, इसलिए नाम मिलाए नहीं जा सकते।</string>
+    <string name="destinations_title">ट्रैफ़िक कहाँ गया</string>
+    <string name="destinations_body">वे पते जो साथ में हल होते दिखे, ताकि आप जान सकें कि कौन से एंडपॉइंट एक ही गंतव्य के हैं। यह नहीं बताता कि उनका मालिक कौन है।</string>
+    <string name="destinations_named">%1$s — %2$d पते</string>
+    <string name="destinations_unnamed">अनाम गंतव्य — %1$d पते</string>
+    <string name="destinations_fresh">हाल में दिखा</string>
+    <string name="destinations_empty">अभी कुछ नहीं। जब मॉनिटरिंग किसी नाम को हल होते देखेगी तब गंतव्य दिखेंगे।</string>
+</resources>

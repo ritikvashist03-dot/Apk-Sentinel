@@ -1,0 +1,180 @@
+package app.apksentinel.networkmonitor
+
+import java.io.ByteArrayOutputStream
+import java.nio.ByteBuffer
+import java.nio.ByteOrder
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
+import org.junit.Test
+
+class CaptureDocumentInspectorTest {
+    @Test
+    fun acceptsLittleAndBigEndianPcapHeadersAndRecords() {
+        val little = CaptureDocumentInspector.inspect(ByteArrayInputStream(pcap(ByteOrder.LITTLE_ENDIAN)))
+        val big = CaptureDocumentInspector.inspect(ByteArrayInputStream(pcap(ByteOrder.BIG_ENDIAN)))
+
+        assertEquals(CaptureInspectionSummary(CaptureInspectionFormat.PCAP, packetCount = 1, observedBytes = 44, truncated = false), (little as CaptureInspectionResult.Opened).summary)
+        assertEquals(CaptureInspectionSummary(CaptureInspectionFormat.PCAP, packetCount = 1, observedBytes = 44, truncated = false), (big as CaptureInspectionResult.Opened).summary)
+    }
+
+    @Test
+    fun acceptsLittleAndBigEndianPcapngWithSectionInterfaceAndEnhancedPacket() {
+        val little = CaptureDocumentInspector.inspect(ByteArrayInputStream(pcapng(ByteOrder.LITTLE_ENDIAN)))
+        val big = CaptureDocumentInspector.inspect(ByteArrayInputStream(pcapng(ByteOrder.BIG_ENDIAN)))
+
+        assertEquals(1L, (little as CaptureInspectionResult.Opened).summary.packetCount)
+        assertEquals(84L, little.summary.observedBytes)
+        assertEquals(1L, (big as CaptureInspectionResult.Opened).summary.packetCount)
+        assertEquals(84L, big.summary.observedBytes)
+    }
+
+    @Test
+    fun rejectsTruncatedOversizedAndSpoofedPcapngWithoutReadingPastBounds() {
+        assertEquals(CaptureInspectionFailure.TRUNCATED_HEADER, (CaptureDocumentInspector.inspect(ByteArrayInputStream(SHAB.take(4).toByteArray())) as CaptureInspectionResult.Rejected).failure)
+
+        val oversized = pcapngSection(ByteOrder.LITTLE_ENDIAN, totalLength = 65_536)
+        assertEquals(CaptureInspectionFailure.BLOCK_TOO_LARGE, (CaptureDocumentInspector.inspect(ByteArrayInputStream(oversized), CaptureInspectionLimits(maximumBlockBytes = 64)) as CaptureInspectionResult.Rejected).failure)
+
+        val badBom = pcapngSection(ByteOrder.LITTLE_ENDIAN, totalLength = 28, bom = 0x12345678)
+        assertEquals(CaptureInspectionFailure.INVALID_PCAPNG_SECTION, (CaptureDocumentInspector.inspect(ByteArrayInputStream(badBom)) as CaptureInspectionResult.Rejected).failure)
+
+        val noInterface = pcapngWithoutInterface()
+        assertEquals(CaptureInspectionFailure.INVALID_PCAPNG_BLOCK, (CaptureDocumentInspector.inspect(ByteArrayInputStream(noInterface)) as CaptureInspectionResult.Rejected).failure)
+
+        val truncatedPacket = pcapng(ByteOrder.LITTLE_ENDIAN).copyOf(80)
+        assertEquals(CaptureInspectionFailure.TRUNCATED_HEADER, (CaptureDocumentInspector.inspect(ByteArrayInputStream(truncatedPacket)) as CaptureInspectionResult.Rejected).failure)
+    }
+
+    @Test
+    fun enforcesPacketByteAndIndividualPacketCaps() {
+        val packetLimited = pcapng(ByteOrder.LITTLE_ENDIAN, packetCount = 2)
+        val packetResult = CaptureDocumentInspector.inspect(
+            ByteArrayInputStream(packetLimited),
+            CaptureInspectionLimits(maximumPackets = 1),
+        ) as CaptureInspectionResult.Opened
+        assertEquals(1L, packetResult.summary.packetCount)
+        assertTrue(CaptureInspectionFailure.PACKET_LIMIT_REACHED in packetResult.summary.limitations)
+
+        val byteLimited = pcapng(ByteOrder.LITTLE_ENDIAN, packetSize = 4_060)
+        val byteResult = CaptureDocumentInspector.inspect(
+            ByteArrayInputStream(byteLimited),
+            CaptureInspectionLimits(maximumBytes = 4_096, maximumPacketBytes = 8_192),
+        ) as CaptureInspectionResult.Opened
+        assertEquals(0L, byteResult.summary.packetCount)
+        assertTrue(CaptureInspectionFailure.BYTE_LIMIT_REACHED in byteResult.summary.limitations)
+
+        val packetTooLarge = pcapng(ByteOrder.LITTLE_ENDIAN, packetSize = 65)
+        assertEquals(
+            CaptureInspectionFailure.PACKET_TOO_LARGE,
+            (CaptureDocumentInspector.inspect(ByteArrayInputStream(packetTooLarge), CaptureInspectionLimits(maximumPacketBytes = 64)) as CaptureInspectionResult.Rejected).failure,
+        )
+    }
+
+    @Test
+    fun handlesStreamsThatTemporarilyReturnZeroAndCountsTheInitialShbExactly() {
+        val result = CaptureDocumentInspector.inspect(ZeroReturningInputStream(pcapng(ByteOrder.LITTLE_ENDIAN)))
+        assertEquals(1L, (result as CaptureInspectionResult.Opened).summary.packetCount)
+        assertEquals(84L, result.summary.observedBytes)
+    }
+
+    @Test
+    fun rejectsPcapngWhenTheBlockTrailerDoesNotMatchItsLength() {
+        val bytes = pcapng(ByteOrder.LITTLE_ENDIAN).copyOf()
+        bytes[bytes.size - 4] = 0
+        assertEquals(
+            CaptureInspectionFailure.INVALID_PCAPNG_BLOCK,
+            (CaptureDocumentInspector.inspect(java.io.ByteArrayInputStream(bytes)) as CaptureInspectionResult.Rejected).failure,
+        )
+    }
+
+    private fun pcap(order: ByteOrder): ByteArray {
+        val packet = byteArrayOf(1, 2, 3, 4)
+        val output = ByteArrayOutputStream()
+        output.write(buffer(order, 24) { value ->
+            value.putInt(0xA1B2C3D4.toInt())
+            value.putShort(2)
+            value.putShort(4)
+            value.putInt(0)
+            value.putInt(0)
+            value.putInt(packet.size)
+            value.putInt(packet.size)
+        })
+        output.write(buffer(order, 16) { value ->
+            value.putInt(0)
+            value.putInt(0)
+            value.putInt(packet.size)
+            value.putInt(packet.size)
+        })
+        output.write(packet)
+        return output.toByteArray()
+    }
+
+    private fun pcapng(order: ByteOrder, packetSize: Int = 4, packetCount: Int = 1): ByteArray {
+        val output = ByteArrayOutputStream()
+        output.write(block(order, 0x0A0D0D0A, ByteBuffer.allocate(16).order(order).apply {
+            putInt(0x1A2B3C4D)
+            putShort(1)
+            putShort(0)
+            putLong(-1L)
+        }.array()))
+        output.write(block(order, 1, ByteBuffer.allocate(8).order(order).apply {
+            putShort(101)
+            putShort(0)
+            putInt(65_535)
+        }.array()))
+        repeat(packetCount) {
+            val packet = ByteArray(packetSize) { 7 }
+            val padded = (packet.size + 3) and 3.inv()
+            val body = ByteBuffer.allocate(20 + padded).order(order).apply {
+                putInt(0)
+                putLong(0L)
+                putInt(packet.size)
+                putInt(packet.size)
+                put(packet)
+                repeat(padded - packet.size) { put(0) }
+            }.array()
+            output.write(block(order, 6, body))
+        }
+        return output.toByteArray()
+    }
+
+    private fun pcapngWithoutInterface(): ByteArray {
+        val output = ByteArrayOutputStream()
+        output.write(block(ByteOrder.LITTLE_ENDIAN, 0x0A0D0D0A, ByteBuffer.allocate(16).order(ByteOrder.LITTLE_ENDIAN).apply {
+            putInt(0x1A2B3C4D); putShort(1); putShort(0); putLong(-1L)
+        }.array()))
+        val body = ByteBuffer.allocate(24).order(ByteOrder.LITTLE_ENDIAN).apply {
+            putInt(0); putLong(0L); putInt(4); putInt(4); putInt(0); putInt(0)
+        }.array()
+        output.write(block(ByteOrder.LITTLE_ENDIAN, 6, body))
+        return output.toByteArray()
+    }
+
+    private fun pcapngSection(order: ByteOrder, totalLength: Int, bom: Int = 0x1A2B3C4D): ByteArray {
+        val bytes = ByteBuffer.allocate(12).order(order).apply {
+            putInt(totalLength); putInt(bom); putInt(1)
+        }.array()
+        return byteArrayOf(0x0A, 0x0D, 0x0D, 0x0A) + bytes
+    }
+
+    private fun block(order: ByteOrder, type: Int, body: ByteArray): ByteArray {
+        val total = 12 + body.size
+        return ByteBuffer.allocate(total).order(order).apply {
+            putInt(type); putInt(total); put(body); putInt(total)
+        }.array()
+    }
+
+    private fun buffer(order: ByteOrder, size: Int, fill: (ByteBuffer) -> Unit): ByteArray =
+        ByteBuffer.allocate(size).order(order).also(fill).array()
+
+    private class ByteArrayInputStream(bytes: ByteArray) : java.io.ByteArrayInputStream(bytes)
+    private class ZeroReturningInputStream(bytes: ByteArray) : java.io.ByteArrayInputStream(bytes) {
+        private var zeros = 4
+        override fun read(buffer: ByteArray, offset: Int, length: Int): Int {
+            if (zeros-- > 0) return 0
+            return super.read(buffer, offset, length)
+        }
+        override fun skip(length: Long): Long = 0L
+    }
+    private companion object { val SHAB = byteArrayOf(0x0A, 0x0D, 0x0D, 0x0A) }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feed_update_optional_privacy">वैकल्पिक प्रकाशक-हस्ताक्षरित अपडेट। यह बिल्ड सक्षम होने पर केवल यह अपडेट अनुरोध भेजा जाता है; APK सूची, कैप्चर डेटा और ट्रैफ़िक नहीं भेजे जाते। जाँच विफल होने पर मौजूदा सुरक्षा बनी रहती है।</string>
+    <string name="feed_update_check_for_threat_feed">हस्ताक्षरित थ्रेट-फ़ीड अपडेट जाँचें</string>
+    <string name="feed_update_installed">प्रकाशक-हस्ताक्षरित अपडेट इंस्टॉल हुआ, संस्करण %1$d।</string>
+    <string name="feed_update_failed_kept_current">अपडेट लागू नहीं हुआ; मौजूदा सुरक्षा बनी रही।</string>
+    <string name="offline_update_optional_privacy">वैकल्पिक प्रकाशक-हस्ताक्षरित देश/ASN बंडल अपडेट। केवल यह अपडेट अनुरोध भेजा जाता है; APK सूची, कैप्चर डेटा और ट्रैफ़िक नहीं भेजे जाते। जाँच विफल होने पर मौजूदा बंडल बना रहता है।</string>
+    <string name="offline_update_check">हस्ताक्षरित देश/ASN अपडेट जाँचें</string>
+    <string name="offline_update_installed">प्रकाशक-हस्ताक्षरित देश/ASN बंडल इंस्टॉल हुआ।</string>
+    <string name="offline_update_failed">अपडेट लागू नहीं हुआ; मौजूदा देश/ASN बंडल बना रहा।</string>
+</resources>

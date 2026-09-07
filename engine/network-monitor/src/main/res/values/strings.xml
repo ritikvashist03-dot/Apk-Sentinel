@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="network_monitor_channel_name">Network monitoring</string>
+    <string name="network_monitor_channel_description">Shows when local VPN network monitoring is active.</string>
+    <string name="network_monitor_notification_title">Local network monitoring</string>
+    <string name="network_monitor_notification_preparing">Preparing local monitoring</string>
+    <string name="network_monitor_notification_active">Monitoring metadata on this device</string>
+    <string name="network_monitor_notification_stopping">Stopping local monitoring</string>
+    <string name="network_monitor_stop_action">Stop</string>
+</resources>

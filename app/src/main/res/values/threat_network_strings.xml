@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="threat_network_title">Block exact high-confidence IP matches</string>
+    <string name="threat_network_body">Off by default. When enabled, only exact IP addresses marked high confidence in the verified local feed become firewall rules for a future monitoring session. A match is evidence, not proof that an app is harmful.</string>
+    <string name="threat_network_on">Enabled for the next session</string>
+    <string name="threat_network_off">Not enabled</string>
+    <string name="threat_network_rule_count">Active exact-IP rules: %1$d of %2$d eligible</string>
+    <string name="threat_network_truncated">The feed has more eligible IP entries than the 512-rule safety limit. Extra entries are not enforced.</string>
+    <string name="threat_network_next_session">Monitoring is already running. This change will apply only after you stop and start a new session.</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feed_update_optional_privacy">Optional publisher-signed update. If enabled by this build, only this update request is sent; APK inventory, capture data, and traffic are not sent. A failed check keeps current protection.</string>
+    <string name="feed_update_check_for_threat_feed">Check for signed threat-feed update</string>
+    <string name="feed_update_installed">Publisher-signed update installed, version %1$d.</string>
+    <string name="feed_update_failed_kept_current">Update was not applied; current protection was kept.</string>
+    <string name="offline_update_optional_privacy">Optional publisher-signed country/ASN bundle update. Only this update request is sent; APK inventory, capture data, and traffic are not sent. A failed check keeps the current bundle.</string>
+    <string name="offline_update_check">Check for signed country/ASN update</string>
+    <string name="offline_update_installed">Publisher-signed country/ASN bundle installed.</string>
+    <string name="offline_update_failed">Update was not applied; the current country/ASN bundle was kept.</string>
+</resources>

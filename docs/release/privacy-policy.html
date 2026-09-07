@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>APK Sentinel Privacy Policy</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.6; }
+    body { margin: 0 auto; max-width: 760px; padding: 32px 20px 64px; }
+    h1, h2 { line-height: 1.25; }
+    .notice { border: 2px solid #b3261e; border-radius: 12px; padding: 16px; }
+    code { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>APK Sentinel Privacy Policy</h1>
+    <p><strong>Effective date:</strong> {{PRIVACY_POLICY_EFFECTIVE_DATE}}</p>
+    <p class="notice"><strong>Publishing note:</strong> This page reflects the 18 August 2026 source-truth review, not release verification. Re-render it whenever the app's data handling or publisher details change, and publish only after the signed artifact, device evidence, legal review, and owner placeholders are complete.</p>
+
+    <h2>Who is responsible</h2>
+    <p>APK Sentinel is published by {{LEGAL_PUBLISHER_NAME}}. Privacy and security questions can be sent to <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a>.</p>
+
+    <h2>What the app does</h2>
+    <p>APK Sentinel is a local-first Android security tool. It can inspect APK files and installed-app metadata, review device protection settings, inspect a link without opening it, and run a user-started local VPN to observe and apply local rules to network connections. Results are evidence and guidance, not a guarantee that an app, link, network, or device is safe.</p>
+
+    <h2>Data processed on your device</h2>
+    <ul>
+      <li><strong>Files you select:</strong> APK bytes, manifest data, file hashes, signatures, permissions, components, and embedded-file indicators are read for local analysis. Bounded <code>.apks</code> and <code>.xapk</code> containers can be inspected as evidence; this does not prove installability. Temporary app-private copies are removed after inspection. A document-access grant may remain until you revoke it or use the in-app erase control.</li>
+      <li><strong>Installed apps:</strong> package names, labels, versions, installer information, requested/granted permissions, components, source paths, icons, and signer fingerprints are read locally. Android and Google Play may limit which apps are visible. One encrypted prior inventory snapshot may be retained for change comparison; this is not a 30-day inventory history. A base-plus-split export is not reinstall-guaranteed.</li>
+      <li><strong>Device checks:</strong> Android version, security-patch date, screen-lock state, debugging settings, storage-protection status, and limited root indicators are evaluated locally.</li>
+      <li><strong>Local VPN session:</strong> when you explicitly start monitoring, packet bytes transit app memory so traffic can be forwarded. APK Sentinel retains bounded metadata such as timestamps, IP versions, addresses, ports, protocols, byte counts, rule decisions, and limited cleartext DNS evidence. DNS names are hashed per session by default. Encrypted metadata history is selectable as session only, one day, seven days, or 30 days, with seven days as the default. Ordinary monitoring does not write packet payloads to disk or send traffic/history to an APK Sentinel server.</li>
+      <li><strong>Protocol evidence:</strong> this is off by default and requires a separate acknowledgement for an active session. Narrow SNI/cleartext-HTTP summaries remain in memory only for that session; they are not written to encrypted history or exported.</li>
+      <li><strong>Optional raw PCAPNG capture:</strong> only after you deliberately start a bounded capture and choose a destination, APK Sentinel can write raw packet records directly to the document you selected. Raw packet records can contain IP addresses and may contain plaintext or other sensitive content from traffic you are authorized to inspect. APK Sentinel does not preview captured payloads, decrypt TLS, or upload the capture. Capture never starts automatically; its active state and a Stop action remain visible while it runs. The saved document is outside app storage and is not removed by in-app erase.</li>
+      <li><strong>Likely-plaintext payload view:</strong> a separately acknowledged Sensitive Advanced view may retain best-effort redacted likely-plaintext bytes in memory only, with a default maximum session of five minutes. It does not decrypt TLS, reassemble traffic, write to disk, export, or transfer content; stop/hide/disposal clears the in-memory material.</li>
+      <li><strong>Certificate and root setup:</strong> TLS support is certificate setup only and does not decrypt traffic. Root capture is limited to an already-rooted, fixed IPv4 TCP connection-control-header route; APK Sentinel never roots a device automatically.</li>
+      <li><strong>Authenticated receiver session:</strong> pairing material is stored encrypted locally. After separate consent, a bounded session can send metadata and upstream-classified encrypted/raw records to the exact user-paired literal-IP receiver over pinned mutual TLS and application-layer authenticated encryption. It does not authorize decrypted payload or credential transfer.</li>
+      <li><strong>Flow metadata export:</strong> a user-selected SAF document may receive bounded redacted JSON/NDJSON flow metadata. It omits endpoint addresses, DNS values, package/flow identifiers, and payload content.</li>
+      <li><strong>Signed threat data:</strong> a feed that you manually import is verified locally and, when accepted, stored encrypted in app-private storage.</li>
+      <li><strong>Preferences and receipts:</strong> onboarding, accessibility, consent-related settings, and local deletion status may be stored on the device.</li>
+    </ul>
+
+    <h2>When data leaves the device</h2>
+    <p>APK Sentinel has no account, advertising, analytics, crash-reporting, reputation, update, support-diagnostic, or APK Sentinel cloud transport in this source review. Data leaves the app only through an action you choose:</p>
+    <ul>
+      <li>An optional redirect check sends the full inspected URL, including path and query, directly to that destination and each redirect host. It uses bounded HEAD requests and reads no page body.</li>
+      <li>Saving or sharing a report, APK, icon, manifest, or package set places that export with the storage provider or app you select. That recipient then controls its copy.</li>
+      <li>Saving an optional raw PCAPNG capture or redacted flow-metadata export writes it directly to the document destination you selected. APK Sentinel does not upload these files or send them to an APK Sentinel server.</li>
+      <li>The fraud-report action opens India&rsquo;s official cybercrime portal but does not prefill or transmit the inspected link or report.</li>
+      <li>Normal network traffic continues to its original destination while the local VPN is active; APK Sentinel does not operate a remote VPN endpoint.</li>
+    </ul>
+
+    <h2>Retention and deletion</h2>
+    <p>APK analysis uses temporary private files. Network metadata and firewall decisions can be retained in encrypted app-private history under the retention policy you choose (session only, one day, seven days, or thirty days; seven days is the default), and the Erase action removes that app-private history. Installed-app continuity retains one encrypted prior snapshot, not a 30-day history. Protocol evidence is active-session memory only. Likely-plaintext payload viewing is memory-only with a default five-minute maximum session. An optional raw PCAPNG capture is bounded by the limits shown before it starts and is written only to the destination you select; it is not retained as app-private capture history. The signed threat feed remains until it expires, is replaced, or is deleted. Exports, including PCAPNG and flow-metadata files, remain wherever you saved or shared them and must be deleted there separately.</p>
+    <p>The in-app erase control stops monitoring and attempts to remove app-owned preferences, cache, private files, document grants, encrypted threat data, and its app-owned encryption key. It cannot erase an export, including a PCAPNG file, after the file has been saved outside app storage. Android VPN consent records, user-installed certificates, and exported files are controlled outside app storage and require separate review. Uninstalling APK Sentinel removes its app-private storage under Android&rsquo;s normal uninstall behavior.</p>
+
+    <h2>Security</h2>
+    <p>APK Sentinel uses bounded parsers, app-private storage, Android Keystore-backed encryption for accepted threat data, and Android&rsquo;s system file/VPN consent surfaces. No security control can eliminate every risk. Report a suspected vulnerability privately to <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a>; do not include secrets or unrelated personal data.</p>
+
+    <h2>Children</h2>
+    <p>APK Sentinel is a technical device-security utility for a general audience. It is not designed for or directed to children under 13, does not offer accounts, and does not knowingly collect children&rsquo;s personal information through an APK Sentinel server.</p>
+
+    <h2>Changes</h2>
+    <p>Material changes will be reflected by updating this page, its effective date, and the relevant in-app disclosure before changed data handling begins.</p>
+
+    <h2>Contact</h2>
+    <p>{{LEGAL_PUBLISHER_NAME}} &mdash; <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a></p>
+  </main>
+</body>
+</html>

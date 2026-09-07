@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="offline_attribution_title">Offline country and network context</string>
+    <string name="offline_attribution_body">Import a publisher-signed local IP allocation bundle. It makes no lookup request and does not send your traffic anywhere.</string>
+    <string name="offline_attribution_active">Active data: %1$s, version %2$d</string>
+    <string name="offline_attribution_prefixes">Verified network prefixes: %1$d</string>
+    <string name="offline_attribution_missing">No verified offline attribution data is installed.</string>
+    <string name="offline_attribution_choose">Choose signed attribution data</string>
+    <string name="offline_attribution_selected">Selected: %1$s</string>
+    <string name="offline_attribution_signature">Publisher signature</string>
+    <string name="offline_attribution_signature_hint">Paste the separate Base64 signature supplied by the same publisher.</string>
+    <string name="offline_attribution_verify">Verify and install locally</string>
+    <string name="offline_attribution_working">Checking signed data…</string>
+    <string name="offline_attribution_read_failed">That document could not be read within the 900 KB safety limit.</string>
+    <string name="offline_attribution_limitation">Country and network-provider data describes IP allocation only. It is not a person’s location, an app’s intent, or a risk verdict. Changes apply to future monitoring sessions.</string>
+    <string name="offline_attribution_failure_dataset">Offline attribution data is unavailable.</string>
+    <string name="offline_attribution_failure_size">The attribution document is outside the supported size.</string>
+    <string name="offline_attribution_failure_format">The attribution document format is invalid.</string>
+    <string name="offline_attribution_failure_entries">The attribution document has too many entries.</string>
+    <string name="offline_attribution_failure_time">The attribution version or time record is invalid.</string>
+    <string name="offline_attribution_failure_expired">The attribution document has expired.</string>
+    <string name="offline_attribution_failure_future">The attribution document is dated too far in the future.</string>
+    <string name="offline_attribution_failure_clock">The device clock cannot safely verify this update.</string>
+    <string name="offline_attribution_failure_rollback">An older or repeated attribution version was rejected.</string>
+    <string name="offline_attribution_failure_key">The publisher verification key is unavailable or does not match.</string>
+    <string name="offline_attribution_failure_signature">The publisher signature is invalid.</string>
+    <string name="offline_attribution_failure_entry">One or more network entries are invalid or duplicated.</string>
+    <string name="offline_attribution_failure_storage">Secure local attribution storage is unavailable.</string>
+</resources>

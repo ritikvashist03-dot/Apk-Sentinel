@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="report_pdf_title">APK Sentinel redacted report</string>
+    <string name="report_pdf_generated_at">Generated: %1$s</string>
+    <string name="report_pdf_scope">Scope: current APK analysis summary</string>
+    <string name="report_pdf_redaction">Redaction: package identifiers, versions, hashes, permissions, components, paths, endpoints, raw manifest, and technical evidence are excluded.</string>
+    <string name="report_pdf_risk">Observed risk evidence score: %1$d/100 · %2$s</string>
+    <string name="report_pdf_complete">Inspection completed within its configured limits.</string>
+    <string name="report_pdf_partial">Inspection is partial or stopped for safety; review limitations.</string>
+    <string name="report_pdf_finding">%1$s: %2$s</string>
+    <string name="report_pdf_limitations">Limitations</string>
+    <string name="report_save_pdf">Save redacted PDF report</string>
+    <string name="report_share_pdf">Share redacted PDF report</string>
+    <string name="report_pdf_share_title">Share redacted PDF report?</string>
+    <string name="report_pdf_share_body">The PDF contains only the redacted summary shown in this preview. Sharing opens Android’s chooser; APK Sentinel does not know or confirm the recipient.</string>
+    <string name="report_pdf_share_confirm">Open share chooser</string>
+    <string name="report_pdf_share_cancel">Cancel</string>
+    <string name="report_pdf_share_chooser">Share redacted APK report</string>
+    <string name="status_saving_pdf_report">Saving redacted PDF report…</string>
+    <string name="status_pdf_report_saved">Redacted PDF report saved to your chosen location.</string>
+    <string name="status_pdf_report_save_failed">Redacted PDF report could not be saved; no destination was changed.</string>
+    <string name="status_pdf_report_unavailable">Redacted PDF report could not be created safely.</string>
+</resources>

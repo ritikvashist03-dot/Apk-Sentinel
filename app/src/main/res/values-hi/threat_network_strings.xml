@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="threat_network_title">सटीक उच्च-विश्वास IP मिलान ब्लॉक करें</string>
+    <string name="threat_network_body">डिफ़ॉल्ट रूप से बंद। चालू करने पर सत्यापित स्थानीय फ़ीड में उच्च विश्वास वाले केवल सटीक IP पते अगले निगरानी सत्र के फ़ायरवॉल नियम बनते हैं। मिलान एक प्रमाण है, किसी ऐप के हानिकारक होने का पक्का निष्कर्ष नहीं।</string>
+    <string name="threat_network_on">अगले सत्र के लिए चालू</string>
+    <string name="threat_network_off">चालू नहीं</string>
+    <string name="threat_network_rule_count">सक्रिय सटीक-IP नियम: %1$d / %2$d योग्य</string>
+    <string name="threat_network_truncated">फ़ीड में 512 नियमों की सुरक्षा सीमा से अधिक योग्य IP प्रविष्टियाँ हैं। अतिरिक्त प्रविष्टियाँ लागू नहीं की जातीं।</string>
+    <string name="threat_network_next_session">निगरानी पहले से चल रही है। यह बदलाव निगरानी रोककर नया सत्र शुरू करने के बाद लागू होगा।</string>
+</resources>

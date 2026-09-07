@@ -1,0 +1,24 @@
+*.iml
+.gradle/
+.idea/
+.kotlin/
+local.properties
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.jks
+*.keystore
+keystore.properties
+app/release/
+.tooling/
+wrapper-bootstrap/
+tools/*.class
+*.pk8
+
+# Local build scratch and captured caches (regenerable; never source)
+.gradle-*/
+.tls-kotlinc-check*/
+gradle-sandbox-home/
+artifacts/
+.sentinel-work/

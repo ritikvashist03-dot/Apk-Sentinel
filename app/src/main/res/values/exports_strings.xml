@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ux_destination_exports">Reports and exports</string>
+    <string name="ux_destination_exports_short">Exports</string>
+    <string name="exports_title">Reports and exports</string>
+    <string name="exports_subtitle">Everything this app can save to a file, in one place. Files are written through Android\'s own save dialog, so you choose where they go.</string>
+    <string name="exports_privacy_note">Anything you save leaves this app\'s private storage. Erasing app data later cannot remove a file you have already saved.</string>
+
+    <string name="exports_group_apk">Checking an app or APK</string>
+    <string name="exports_apk_report_title">App check report</string>
+    <string name="exports_apk_report_body">A summary of what an APK check found. Save the redacted version to share with someone else, or the technical version to keep full detail.</string>
+    <string name="exports_apk_manifest_title">Readable manifest</string>
+    <string name="exports_apk_manifest_body">An app\'s decoded AndroidManifest.xml, saved as readable text.</string>
+    <string name="exports_apk_artifact_title">App file and icon</string>
+    <string name="exports_apk_artifact_body">Save an installed app\'s package files or its icon. Split packages are saved as a set and are not guaranteed to reinstall.</string>
+
+    <string name="exports_group_network">Network activity</string>
+    <string name="exports_network_flow_title">Connection summary</string>
+    <string name="exports_network_flow_body">A redacted list of the connections seen while monitoring. Endpoint addresses, DNS values and app identifiers are left out.</string>
+    <string name="exports_network_capture_title">Raw capture file</string>
+    <string name="exports_network_capture_body">A PCAPNG recording for tools like Wireshark. This one can contain addresses and unencrypted content, so treat the saved file as sensitive.</string>
+    <string name="exports_network_settings_title">Your settings</string>
+    <string name="exports_network_settings_body">Your rules and preferences, so you can move them to another device. Keys, consents and captured data are never included.</string>
+</resources>
