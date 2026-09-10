@@ -37,6 +37,56 @@ class TunPacketCodecTest {
     }
 
     @Test
+    fun aCorruptedIpv4HeaderFailsVerificationSoTheDataPlaneCanDropIt() {
+        val packet = TunPacketCodec.tcpPacket(
+            version = IpVersion.IPV4,
+            source = InetAddress.getByName("10.77.0.2"),
+            destination = InetAddress.getByName("203.0.113.8"),
+            sourcePort = 43_210,
+            destinationPort = 443,
+            sequence = 1L,
+            acknowledgement = 0,
+            flags = TunPacketCodec.TCP_FLAG_SYN,
+            maximumPacketBytes = 1_500,
+        )
+        assertTrue(TunPacketCodec.verifyIpv4HeaderChecksum(packet))
+
+        // Flip a bit in the destination address, inside the checksummed header. The forwarding
+        // plane reads addresses and ports out of this header to make firewall and attribution
+        // decisions, so a header that does not verify must not be forwarded.
+        val corrupted = packet.copyOf()
+        corrupted[16] = (corrupted[16].toInt() xor 0x01).toByte()
+
+        assertFalse(TunPacketCodec.verifyIpv4HeaderChecksum(corrupted))
+    }
+
+    @Test
+    fun aLegalZeroChecksumUdpPacketKeepsAValidIpv4Header() {
+        // A zero UDP checksum is legal in IPv4 and simply means "not computed". The transport
+        // checksum is deliberately NOT a forwarding gate for exactly this reason - enforcing
+        // it would discard ordinary traffic, DNS above all. The IPv4 header checksum, which
+        // IS enforced, must stay valid regardless.
+        val packet = TunPacketCodec.udpPacket(
+            version = IpVersion.IPV4,
+            source = InetAddress.getByName("10.77.0.2"),
+            destination = InetAddress.getByName("203.0.113.53"),
+            sourcePort = 51_000,
+            destinationPort = 53,
+            payload = byteArrayOf(0x12, 0x34, 0x01, 0x00),
+            maximumPacketBytes = 1_500,
+        )
+        val headerBytes = (packet[0].toInt() and 0x0f) * 4
+        val zeroed = packet.copyOf()
+        zeroed[headerBytes + 6] = 0
+        zeroed[headerBytes + 7] = 0
+
+        assertTrue(
+            "Zeroing the UDP checksum must not disturb the IPv4 header checksum",
+            TunPacketCodec.verifyIpv4HeaderChecksum(zeroed),
+        )
+    }
+
+    @Test
     fun ipv6UdpPacketRoundTripsWithValidChecksum() {
         val client = InetAddress.getByName("fd77:6170:6b73:656e::2")
         val remote = InetAddress.getByName("2001:db8::53")

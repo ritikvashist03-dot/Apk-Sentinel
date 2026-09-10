@@ -76,4 +76,8 @@
     <string name="key_log_failed">कुंजियाँ सहेजी नहीं जा सकीं।</string>
     <string name="key_log_cancelled">सहेजना रद्द हुआ। कुछ नहीं लिखा गया।</string>
     <string name="key_log_cleared">रिकॉर्ड की गई कुंजियाँ मिटा दी गईं।</string>
+    <string name="tls_inspection_ca_store_present">इस फ़ोन पर मिला</string>
+    <string name="tls_inspection_ca_store_absent">इस फ़ोन पर नहीं मिला</string>
+    <string name="tls_inspection_ca_store_unknown">Android ने नहीं बताया</string>
+    <string name="tls_inspection_certificate_not_confirmed_warning">प्रमाणपत्र इंस्टॉल होने की पुष्टि नहीं है, इसलिए ऐप्स इसे अस्वीकार कर सकते हैं और कुछ भी डिक्रिप्ट नहीं होगा। पहले इसे नीचे सेट करें।</string>
 </resources>

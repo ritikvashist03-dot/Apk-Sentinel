@@ -50,6 +50,13 @@ data class ForwardingMetrics(
     val blockedPackets: Long = 0,
     val unsupportedPackets: Long = 0,
     val malformedPackets: Long = 0,
+    /**
+     * Packets whose TCP/UDP checksum did not verify. These are still forwarded: a zero
+     * UDP checksum is legal in IPv4, and checksum offload can leave the field unfinished,
+     * so dropping on this would discard ordinary traffic. It is counted because IPv6 has
+     * no header checksum at all, making this the only integrity signal available there.
+     */
+    val transportChecksumMismatches: Long = 0,
     val capacityRejections: Long = 0,
     val queueRejections: Long = 0,
     val packetTooLargeResponses: Long = 0,

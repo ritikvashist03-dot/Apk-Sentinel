@@ -237,6 +237,37 @@ class PureKotlinForwardingDataPlane(
 
         when (val parsed = TunPacketCodec.parse(bytes)) {
             is TunPacketParseResult.Parsed -> {
+                // The IPv4 header checksum is mandatory and covers the header this plane
+                // reads addresses and ports out of. If it does not verify, the fields the
+                // firewall and attribution decisions rest on cannot be trusted, so the
+                // packet is treated exactly like a malformed one: counted, not forwarded.
+                //
+                // The transport (TCP/UDP) checksum is deliberately NOT enforced here. A
+                // zero UDP checksum is legal in IPv4 and simply means "not computed", and
+                // checksum offload legitimately leaves the field unfinished on some paths.
+                // Dropping on that would discard ordinary traffic - DNS above all.
+                if (parsed.packet.version == IpVersion.IPV4 && !TunPacketCodec.verifyIpv4HeaderChecksum(bytes)) {
+                    val checksumDirective = requestDirective(
+                        runtime = runtime,
+                        packet = ForwardedPacket(
+                            bytes = bytes,
+                            direction = PacketDirection.OUTBOUND,
+                            observedAtMillis = clock.nowMillis(),
+                        ),
+                    ) ?: return
+                    runtime.metrics.malformedPackets.incrementAndGet()
+                    reportFirewallOutcome(
+                        runtime,
+                        checksumDirective,
+                        FirewallEnforcementOutcome.FAILED,
+                        "Malformed packet was not forwarded: IPv4 header checksum did not verify.",
+                    )
+                    return
+                }
+                // Observed, never enforced - see transportChecksumMismatches for why.
+                if (!TunPacketCodec.verifyTransportChecksum(bytes)) {
+                    runtime.metrics.transportChecksumMismatches.incrementAndGet()
+                }
                 val directive = requestDirective(
                     runtime = runtime,
                     packet = ForwardedPacket(
@@ -1478,6 +1509,7 @@ class PureKotlinForwardingDataPlane(
         val blockedPackets = AtomicLong(0)
         val unsupportedPackets = AtomicLong(0)
         val malformedPackets = AtomicLong(0)
+        val transportChecksumMismatches = AtomicLong(0)
         val capacityRejections = AtomicLong(0)
         val queueRejections = AtomicLong(0)
         val packetTooLargeResponses = AtomicLong(0)
@@ -1497,6 +1529,7 @@ class PureKotlinForwardingDataPlane(
             blockedPackets = blockedPackets.get(),
             unsupportedPackets = unsupportedPackets.get(),
             malformedPackets = malformedPackets.get(),
+            transportChecksumMismatches = transportChecksumMismatches.get(),
             capacityRejections = capacityRejections.get(),
             queueRejections = queueRejections.get(),
             packetTooLargeResponses = packetTooLargeResponses.get(),

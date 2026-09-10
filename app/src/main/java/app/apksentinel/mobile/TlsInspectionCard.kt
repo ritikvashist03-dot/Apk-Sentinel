@@ -32,6 +32,7 @@ import app.apksentinel.design.SentinelCard
 import app.apksentinel.design.SentinelStatusLabel
 import app.apksentinel.design.SentinelStatusTone
 import app.apksentinel.design.SentinelToggleRow
+import app.apksentinel.engine.tlsinspection.AndroidCaStorePresence
 import app.apksentinel.engine.tlsinspection.CertificateInstallationState
 import app.apksentinel.engine.tlsinspection.CertificateSetupConsent
 import kotlinx.coroutines.Dispatchers
@@ -183,6 +184,14 @@ internal fun TlsInspectionCard() {
             },
         )
         Text(stringResource(R.string.tls_inspection_session_unavailable), style = MaterialTheme.typography.bodySmall)
+        val certificateConfirmed = (certificateStatus as? TlsInspectionCertificateStatus.Prepared)
+            ?.installationState == CertificateInstallationState.INSTALLED
+        if (!certificateConfirmed) {
+            SentinelStatusLabel(
+                label = stringResource(R.string.tls_inspection_certificate_not_confirmed_warning),
+                tone = SentinelStatusTone.REVIEW,
+            )
+        }
         if (networkSessionActive || activeSnapshot?.mustShowProminentActiveIndicator == true) {
             SentinelStatusLabel(
                 label = stringResource(R.string.tls_inspection_session_active),
@@ -436,7 +445,7 @@ private fun TlsCertificateStatus(status: TlsInspectionCertificateStatus) {
             )
             KeyValueRow(
                 stringResource(R.string.tls_inspection_ca_store_presence_label),
-                status.caStorePresence.name,
+                stringResource(tlsCaStorePresenceText(status.caStorePresence)),
             )
             Text(stringResource(R.string.tls_inspection_certificate_key_local), style = MaterialTheme.typography.bodySmall)
             if (status.installationState == CertificateInstallationState.UNKNOWN) {
@@ -444,6 +453,12 @@ private fun TlsCertificateStatus(status: TlsInspectionCertificateStatus) {
             }
         }
     }
+}
+
+private fun tlsCaStorePresenceText(presence: AndroidCaStorePresence): Int = when (presence) {
+    AndroidCaStorePresence.CA_STORE_PRESENT -> R.string.tls_inspection_ca_store_present
+    AndroidCaStorePresence.CA_STORE_NOT_PRESENT -> R.string.tls_inspection_ca_store_absent
+    AndroidCaStorePresence.CA_STORE_UNKNOWN -> R.string.tls_inspection_ca_store_unknown
 }
 
 private fun tlsCertificateInstallationStateText(state: CertificateInstallationState): Int = when (

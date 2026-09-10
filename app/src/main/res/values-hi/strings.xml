@@ -57,8 +57,6 @@
     <string name="status_inspection_complete">निरीक्षण पूरा हुआ</string>
     <string name="status_inspection_cancelled">निरीक्षण रद्द किया गया; पहले की रिपोर्ट नहीं बदली गई।</string>
     <string name="status_inspection_failed">फ़ाइल का सुरक्षित निरीक्षण नहीं हो सका। कोई दूसरी फ़ाइल चुनें या फिर प्रयास करें।</string>
-    <string name="link_title">लिंक जाँचें</string>
-    <string name="link_subtitle">गंतव्य खोले बिना होस्टनाम को सामान्य करें और जाँचें।</string>
     <string name="link_input_label">वेबसाइट या लिंक</string>
     <string name="link_input_hint">केवल स्थानीय जाँच; रीडायरेक्ट और ऑनलाइन प्रतिष्ठा खोज बंद रहती है।</string>
     <string name="link_inspect">खोले बिना जाँचें</string>
@@ -119,10 +117,7 @@
     <string name="link_fraud_confirmed">आधिकारिक प्राप्तकर्ता की पुष्टि हुई</string>
     <string name="link_fraud_not_confirmed">प्राप्तकर्ता की पुष्टि नहीं हुई</string>
     <string name="link_fraud_cancelled">पोर्टल हैंडऑफ रद्द; कुछ भी नहीं भेजा गया।</string>
-    <string name="analyze_title">फ़ाइल या लिंक जाँचें</string>
-    <string name="analyze_subtitle">APK को इंस्टॉल किए बिना स्थानीय रूप से जाँचें, या संदिग्ध लिंक को खोले बिना देखें।</string>
     <string name="analyze_task_title">आप क्या जाँचना चाहते हैं?</string>
-    <string name="analyze_task_body">स्क्रीन को आसान रखने के लिए एक काम चुनें। बदलने पर आपका मौजूदा परिणाम यहीं रहता है।</string>
     <string name="analyze_task_apk">APK फ़ाइल या इंस्टॉल किया ऐप</string>
     <string name="analyze_task_apk_selected">APK फ़ाइल या इंस्टॉल किया ऐप · चुना गया</string>
     <string name="analyze_task_link">संदिग्ध लिंक</string>
@@ -274,21 +269,6 @@
     <string name="apk_report_field_category">श्रेणी</string>
     <string name="apk_report_field_confidence">विश्वसनीयता</string>
     <string name="apk_report_field_evidence_id">प्रमाण ID</string>
-    <string name="apk_report_limitation_archive_incomplete">आर्काइव की सूची बनाना पूरा नहीं हुआ।</string>
-    <string name="apk_report_limitation_permissions_truncated">कॉन्फ़िगर की गई मैनिफ़ेस्ट सीमा के कारण अनुमति आउटपुट संक्षिप्त किया गया।</string>
-    <string name="apk_report_limitation_components_truncated">कॉन्फ़िगर की गई मैनिफ़ेस्ट सीमा के कारण कॉम्पोनेंट आउटपुट संक्षिप्त किया गया।</string>
-    <string name="apk_report_limitation_signing_incomplete">हस्ताक्षर सत्यापन पूरा नहीं हुआ।</string>
-    <string name="apk_report_limitation_readable_manifest_truncated">पठनीय AndroidManifest.xml दृश्य अपनी कॉन्फ़िगर की गई आकार सीमा तक पहुंच गया।</string>
-    <string name="apk_report_limitation_resource_references">कुछ पठनीय मैनिफ़ेस्ट संसाधन संदर्भ संख्यात्मक संसाधन पहचानकर्ता के रूप में एन्कोडेड रहते हैं।</string>
-    <string name="apk_report_limitation_input_copy">इनपुट को निजी निरीक्षण कार्यक्षेत्र में पूरी तरह कॉपी नहीं किया जा सका।</string>
-    <string name="apk_report_limitation_archive_unreadable">आर्काइव को पूरी तरह पढ़ा नहीं जा सका।</string>
-    <string name="apk_report_limitation_archive_safety_limit">कॉन्फ़िगर की गई आर्काइव सुरक्षा सीमा पर निरीक्षण रोक दिया गया।</string>
-    <string name="apk_report_limitation_manifest_unavailable">Android मैनिफ़ेस्ट विवरण पार्स नहीं किया जा सका।</string>
-    <string name="apk_report_limitation_heuristic_scan_bounded">लिटरल ट्रैकर और एंडपॉइंट स्कैनिंग सीमित रखी गई थी।</string>
-    <string name="apk_report_limitation_findings_truncated">ह्यूरिस्टिक निष्कर्ष आउटपुट अपनी कॉन्फ़िगर सीमा तक पहुंच गया; अतिरिक्त अलग निष्कर्ष छूट सकते हैं।</string>
-    <string name="apk_report_limitation_temporary_cleanup">अस्थायी निरीक्षण फ़ाइल हटाई नहीं जा सकी।</string>
-    <string name="network_monitor_title">स्थानीय नेटवर्क मॉनिटर</string>
-    <string name="network_monitor_subtitle">किसी सत्र के शुरू होने से पहले Android VPN सहमति संवाद दिखाता है।</string>
     <string name="network_status_monitoring_active">निगरानी सक्रिय है</string>
     <string name="network_status_starting_safely">सुरक्षित रूप से शुरू हो रहा है</string>
     <string name="network_status_forwarding_unavailable">फ़ॉरवर्डिंग उपलब्ध नहीं है</string>
@@ -541,8 +521,6 @@
     <string name="notification_delivery_monthly_body">Phone Checkup चलाने के लिए तैयार होने पर APK Sentinel खोलें।</string>
     <string name="notification_delivery_weekly_title">साप्ताहिक निगरानी सारांश</string>
     <string name="notification_delivery_weekly_body">स्थानीय निगरानी सारांश देखने के लिए APK Sentinel खोलें।</string>
-    <string name="activity_title">गतिविधि</string>
-    <string name="activity_subtitle">पूरे किए गए जाँचों और स्थानीय सुरक्षा कार्रवाइयों का निजी, सरल रिकॉर्ड।</string>
     <string name="activity_summary_title">यह क्या दिखाता है</string>
     <string name="activity_summary_body">यहां केवल सुरक्षित श्रेणियां, परिणाम और समय दिखते हैं। APK Sentinel गतिविधि में लिंक, ऐप नाम, पते, पैकेट सामग्री या रिपोर्ट पाठ नहीं सहेजता।</string>
     <string name="activity_not_risk_score">यह गतिविधि रिकॉर्ड है, सुरक्षा स्कोर नहीं। पूरा हुआ कार्य यह प्रमाणित नहीं करता कि फोन, ऐप, फ़ाइल या लिंक सुरक्षित है।</string>
@@ -606,7 +584,7 @@
     <string name="network_app_selection_all_except">मोड: इनको छोड़कर सभी ऐप</string><string name="network_app_selection_only">मोड: केवल ये ऐप</string><string name="network_app_selection_packages">Package नाम</string><string name="network_app_selection_hint">comma, semicolon या newline से Android package नाम अलग करें।</string><string name="network_app_selection_invalid">कम से कम एक ऐप चुनें, या \"इनको छोड़कर सभी ऐप\" मोड पर वापस जाएं।</string>
     <string name="network_app_selection_selected_count">इस मोड के लिए चुने गए: %1$d</string><string name="network_app_selection_show_picker">इंस्टॉल किए ऐप चुनें</string><string name="network_app_selection_hide_picker">इंस्टॉल ऐप picker छिपाएँ</string><string name="network_app_selection_search">इंस्टॉल ऐप खोजें</string><string name="network_app_selection_search_hint">ऐप label या package नाम से खोजें।</string><string name="network_app_selection_clear">चुने ऐप साफ़ करें</string><string name="network_app_selection_system">सिस्टम ऐप</string><string name="network_app_selection_user">यूज़र द्वारा इंस्टॉल ऐप</string><string name="network_app_selection_selected">चुना गया</string><string name="network_app_selection_not_selected">नहीं चुना गया</string><string name="network_app_selection_unavailable">इंस्टॉल ऐप coverage उपलब्ध नहीं; Android ने सुरक्षित सूची नहीं दी।</string><string name="network_app_selection_no_match">इस खोज से कोई इंस्टॉल ऐप नहीं मिला।</string><string name="network_app_selection_coverage_limited">सुरक्षा के लिए केवल पहले %1$d इंस्टॉल ऐप दिखाए गए।</string><string name="network_app_selection_show_advanced">Advanced package text दिखाएँ</string><string name="network_app_selection_hide_advanced">Advanced package text छिपाएँ</string>
     <string name="network_rule_app_packages">ऐप पैकेज अपवाद</string><string name="network_rule_app_packages_hint">वैकल्पिक package नाम comma से अलग करें।</string><string name="network_rule_domain">गंतव्य वेबसाइट नाम</string><string name="network_rule_protocol">ट्रांसपोर्ट प्रोटोकॉल</string><string name="network_rule_protocol_hint">TCP, UDP या खाली छोड़ें।</string><string name="network_rule_port">Destination port या range</string><string name="network_rule_port_hint">उदाहरण 443 या 8000-8080।</string><string name="network_add_narrow_exception">संकीर्ण allow exception जोड़ें</string><string name="network_narrow_exception_saved">Engine policy से संकीर्ण exception सेव हुआ।</string><string name="network_narrow_exception_not_saved">Exception सेव नहीं हुआ; app, domain, protocol या port जाँचें।</string><string name="network_rule_domain_unavailable">वेबसाइट-नाम नियम अभी उपलब्ध नहीं हैं। इसके बजाय IP address का उपयोग करें।</string>
-    <string name="har_export_title">HAR एक्सपोर्ट</string><string name="har_export_body">HAR export केवल engine द्वारा वास्तव में उपलब्ध complete, bounded plaintext HTTP observation तक सीमित है।</string><string name="har_export_unavailable">Export के लिए कोई complete plaintext HTTP observation उपलब्ध नहीं है।</string><string name="har_export_incomplete_unavailable">Payload records में complete authenticated HTTP request/response contract नहीं है, इसलिए HAR unavailable है।</string><string name="har_export_no_claim">कोई HAR फ़ाइल या completeness claim नहीं बनाया गया।</string>
+    <string name="har_export_title">HAR एक्सपोर्ट</string><string name="har_export_body">HAR export केवल engine द्वारा वास्तव में उपलब्ध complete, bounded plaintext HTTP observation तक सीमित है।</string><string name="har_export_unavailable">Export के लिए कोई complete plaintext HTTP observation उपलब्ध नहीं है।</string><string name="har_export_no_claim">कोई HAR फ़ाइल या completeness claim नहीं बनाया गया।</string>
     <string name="network_app_selection_unknown_selected">एक या अधिक चुने package सीमित installed-app सूची में नहीं हैं; Android उन्हें छोड़ सकता है और coverage अज्ञात है।</string><string name="network_app_selection_app_description">%1$s; package %2$s।</string>
     <string name="privacy_erase_incomplete">मिटाना पूरा नहीं हुआ। कुछ डेटा अब भी इस डिवाइस पर हो सकता है। कृपया फिर से चलाएँ।</string>
     <string name="privacy_erase_done">आपका डेटा मिटा दिया गया।</string>

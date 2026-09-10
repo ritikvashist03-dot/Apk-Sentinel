@@ -2,8 +2,6 @@
 <resources>
     <string name="ux_destination_exports">रिपोर्ट और एक्सपोर्ट</string>
     <string name="ux_destination_exports_short">एक्सपोर्ट</string>
-    <string name="exports_title">रिपोर्ट और एक्सपोर्ट</string>
-    <string name="exports_subtitle">यह ऐप जो कुछ फ़ाइल में सहेज सकता है, सब एक जगह। फ़ाइलें Android के अपने सेव डायलॉग से लिखी जाती हैं, इसलिए जगह आप चुनते हैं।</string>
     <string name="exports_privacy_note">आप जो भी सहेजते हैं वह इस ऐप के निजी स्टोरेज से बाहर चला जाता है। बाद में ऐप डेटा मिटाने से पहले सहेजी गई फ़ाइल नहीं हटती।</string>
 
     <string name="exports_group_apk">ऐप या APK जाँचना</string>

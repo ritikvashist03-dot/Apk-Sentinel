@@ -76,4 +76,8 @@
     <string name="key_log_failed">Could not save the keys.</string>
     <string name="key_log_cancelled">Save cancelled. Nothing was written.</string>
     <string name="key_log_cleared">Recorded keys erased.</string>
+    <string name="tls_inspection_ca_store_present">Found on this phone</string>
+    <string name="tls_inspection_ca_store_absent">Not found on this phone</string>
+    <string name="tls_inspection_ca_store_unknown">Android did not say</string>
+    <string name="tls_inspection_certificate_not_confirmed_warning">The certificate is not confirmed installed, so apps may refuse it and nothing will be decrypted. Set it up below first.</string>
 </resources>

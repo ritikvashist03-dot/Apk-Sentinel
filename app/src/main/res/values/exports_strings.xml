@@ -2,8 +2,6 @@
 <resources>
     <string name="ux_destination_exports">Reports and exports</string>
     <string name="ux_destination_exports_short">Exports</string>
-    <string name="exports_title">Reports and exports</string>
-    <string name="exports_subtitle">Everything this app can save to a file, in one place. Files are written through Android\'s own save dialog, so you choose where they go.</string>
     <string name="exports_privacy_note">Anything you save leaves this app\'s private storage. Erasing app data later cannot remove a file you have already saved.</string>
 
     <string name="exports_group_apk">Checking an app or APK</string>

@@ -20,36 +20,6 @@
     <string name="ux_onboarding_skip">Skip introduction</string>
     <string name="ux_onboarding_no_terms_consent">This introduction is not consent to Terms, monitoring, analytics, or data sharing.</string>
 
-    <string name="ux_overview_title">Start with a clear check</string>
-    <string name="ux_overview_subtitle">Four plain tasks help you understand what is checked, what is not, and what to do next.</string>
-    <string name="ux_overview_status_title">Coverage right now</string>
-    <string name="ux_overview_coverage_active">Supported connection details are being observed through the active local VPN. Other checks run only when you choose them.</string>
-    <string name="ux_overview_coverage_inactive">Nothing is monitored continuously. Choose one of the checks below when you need it.</string>
-    <string name="ux_overview_coverage_limited">Some evidence is unavailable in this state. Review the next action before relying on a result.</string>
-    <string name="ux_overview_local_data">Checks stay on this device unless you deliberately choose an online action, save, or share.</string>
-    <string name="ux_overview_recommended_label">Recommended first step</string>
-    <string name="ux_overview_next_action">Next action</string>
-    <string name="ux_overview_device_title">Check this phone</string>
-    <string name="ux_overview_device_body">Review important Android protections and see which settings APK Sentinel can verify automatically.</string>
-    <string name="ux_overview_device_action">Start Phone Checkup</string>
-    <string name="ux_overview_device_status">Not checked yet</string>
-    <string name="ux_overview_installed_title">Check an installed app</string>
-    <string name="ux_overview_installed_body">Choose an app Android lets APK Sentinel see, then review its source, age, permissions, and identity evidence.</string>
-    <string name="ux_overview_open_apps">Choose an installed app</string>
-    <string name="ux_overview_installed_status">Not checked yet</string>
-    <string name="ux_overview_analyze_title">Check an APK or link</string>
-    <string name="ux_overview_analyze_body">Choose an APK for a local evidence report, or inspect a suspicious link without opening it.</string>
-    <string name="ux_overview_choose_apk">Choose an APK or link</string>
-    <string name="ux_overview_analyze_status">Not checked yet</string>
-    <string name="ux_overview_network_title">Review network activity</string>
-    <string name="ux_overview_network_body">See supported connection details on this phone. Android asks before the local VPN starts, and Stop stays visible.</string>
-    <string name="ux_overview_network_action">Review network monitoring</string>
-    <string name="ux_overview_network_status_not_checked">Not checked yet</string>
-    <string name="ux_overview_network_status_checked">Checked now</string>
-    <string name="ux_overview_network_status_in_progress">Checking now</string>
-    <string name="ux_overview_network_status_could_not_verify">Couldn’t verify</string>
-    <string name="ux_overview_activity_title">Recent activity</string>
-    <string name="ux_overview_activity_body">Review private summaries of completed checks and local actions.</string>
 
     <string name="ux_destination_overview">Overview</string>
     <string name="ux_destination_home">Home</string>
@@ -76,15 +46,7 @@
     <string name="ux_drawer_group_monitor">Watch network traffic</string>
     <string name="ux_drawer_group_data">Your data</string>
     <string name="ux_drawer_group_about">About this app</string>
-    <string name="ux_overview_coverage_label">Areas checked</string>
-    <string name="ux_overview_metric_checked">Checked</string>
-    <string name="ux_overview_metric_review">In progress</string>
-    <string name="ux_overview_metric_not_checked">Not checked yet</string>
-    <string name="ux_overview_areas_title">Where you stand</string>
-    <string name="ux_overview_corroborated">Seen both installed and sending traffic this session: %1$d</string>
-    <string name="ux_overview_corroborated_none">No app has yet been seen both installed here and sending traffic. Start network monitoring to relate the two.</string>
 
-    <string name="ux_home_greeting">Choose a check</string>
     <string name="ux_home_tile_reports">Reports</string>
     <string name="ux_home_tile_check">Check file</string>
     <string name="ux_home_version">Version %1$s</string>

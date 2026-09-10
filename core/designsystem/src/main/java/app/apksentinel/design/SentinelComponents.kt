@@ -282,8 +282,3 @@ fun SentinelToggleRow(
     }
 }
 
-fun ColorScheme.statusColor(isGood: Boolean, isWarning: Boolean = false): Color = when {
-    isGood -> primary
-    isWarning -> tertiary
-    else -> error
-}

@@ -24,7 +24,6 @@
     <string name="firewall_domain_bound">Domain rule active: %1$d address(es) seen for this name.</string>
     <string name="firewall_domain_unbound">Domain rule waiting: this app has not seen this name resolve yet, so it cannot be enforced.</string>
     <string name="firewall_domain_no_session">Domain rule waiting: start network monitoring so this name can be matched to an address.</string>
-    <string name="firewall_domain_names_omitted">Domain rule waiting: web address recording is off, so names cannot be matched.</string>
     <string name="destinations_title">Where traffic went</string>
     <string name="destinations_body">Addresses that were seen resolving together, so you can tell which endpoints belong to the same destination. This does not say who owns them.</string>
     <string name="destinations_named">%1$s — %2$d address(es)</string>

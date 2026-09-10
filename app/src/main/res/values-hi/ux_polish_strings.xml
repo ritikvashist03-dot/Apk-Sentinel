@@ -20,36 +20,6 @@
     <string name="ux_onboarding_skip">परिचय छोड़ें</string>
     <string name="ux_onboarding_no_terms_consent">यह परिचय नियम, निगरानी, एनालिटिक्स या डेटा शेयरिंग की सहमति नहीं है।</string>
 
-    <string name="ux_overview_title">एक साफ़ जाँच से शुरू करें</string>
-    <string name="ux_overview_subtitle">चार आसान काम बताते हैं कि क्या जाँचा गया, क्या नहीं और अगला कदम क्या है।</string>
-    <string name="ux_overview_status_title">अभी की कवरेज</string>
-    <string name="ux_overview_coverage_active">सक्रिय स्थानीय VPN के ज़रिए समर्थित कनेक्शन विवरण देखे जा रहे हैं। दूसरी जाँच केवल आपके चुनने पर चलती हैं।</string>
-    <string name="ux_overview_coverage_inactive">लगातार कुछ भी मॉनिटर नहीं हो रहा। जरूरत होने पर नीचे कोई जाँच चुनें।</string>
-    <string name="ux_overview_coverage_limited">इस स्थिति में कुछ प्रमाण उपलब्ध नहीं हैं। परिणाम पर भरोसा करने से पहले अगला कदम देखें।</string>
-    <string name="ux_overview_local_data">जाँच इसी डिवाइस पर रहती हैं, जब तक आप जानबूझकर ऑनलाइन कार्रवाई, सेव या शेयर न चुनें।</string>
-    <string name="ux_overview_recommended_label">पहला सुझाया गया कदम</string>
-    <string name="ux_overview_next_action">अगला कदम</string>
-    <string name="ux_overview_device_title">इस फ़ोन की जाँच करें</string>
-    <string name="ux_overview_device_body">महत्वपूर्ण Android सुरक्षा देखें और जानें कि APK Sentinel कौन-सी सेटिंग अपने-आप सत्यापित कर सकता है।</string>
-    <string name="ux_overview_device_action">Phone Checkup शुरू करें</string>
-    <string name="ux_overview_device_status">अभी जाँच नहीं हुई</string>
-    <string name="ux_overview_installed_title">इंस्टॉल किए ऐप की जाँच करें</string>
-    <string name="ux_overview_installed_body">Android द्वारा दिखाए गए ऐप को चुनें और उसका स्रोत, उम्र, अनुमतियाँ और पहचान प्रमाण देखें।</string>
-    <string name="ux_overview_open_apps">इंस्टॉल किया ऐप चुनें</string>
-    <string name="ux_overview_installed_status">अभी जाँच नहीं हुई</string>
-    <string name="ux_overview_analyze_title">APK या लिंक की जाँच करें</string>
-    <string name="ux_overview_analyze_body">स्थानीय प्रमाण रिपोर्ट के लिए APK चुनें या संदिग्ध लिंक को खोले बिना जाँचें।</string>
-    <string name="ux_overview_choose_apk">APK या लिंक चुनें</string>
-    <string name="ux_overview_analyze_status">अभी जाँच नहीं हुई</string>
-    <string name="ux_overview_network_title">नेटवर्क गतिविधि देखें</string>
-    <string name="ux_overview_network_body">इस फ़ोन पर समर्थित कनेक्शन विवरण देखें। स्थानीय VPN शुरू करने से पहले Android पूछता है और रोकें हमेशा दिखता है।</string>
-    <string name="ux_overview_network_action">नेटवर्क निगरानी देखें</string>
-    <string name="ux_overview_network_status_not_checked">अभी जाँच नहीं हुई</string>
-    <string name="ux_overview_network_status_checked">अभी जाँचा गया</string>
-    <string name="ux_overview_network_status_in_progress">अभी जाँच हो रही है</string>
-    <string name="ux_overview_network_status_could_not_verify">सत्यापित नहीं हो सका</string>
-    <string name="ux_overview_activity_title">हाल की गतिविधि</string>
-    <string name="ux_overview_activity_body">पूरे हुए जाँचों और स्थानीय कार्रवाइयों के निजी सारांश देखें।</string>
 
     <string name="ux_destination_overview">अवलोकन</string>
     <string name="ux_destination_home">होम</string>
@@ -76,15 +46,7 @@
     <string name="ux_drawer_group_monitor">नेटवर्क ट्रैफ़िक देखें</string>
     <string name="ux_drawer_group_data">आपका डेटा</string>
     <string name="ux_drawer_group_about">इस ऐप के बारे में</string>
-    <string name="ux_overview_coverage_label">जाँचे गए क्षेत्र</string>
-    <string name="ux_overview_metric_checked">जाँचे गए</string>
-    <string name="ux_overview_metric_review">प्रगति में</string>
-    <string name="ux_overview_metric_not_checked">अभी नहीं जाँचा</string>
-    <string name="ux_overview_areas_title">आप कहाँ खड़े हैं</string>
-    <string name="ux_overview_corroborated">इस सत्र में इंस्टॉल और ट्रैफ़िक भेजते हुए दोनों दिखे: %1$d</string>
-    <string name="ux_overview_corroborated_none">अभी तक कोई ऐप इंस्टॉल और ट्रैफ़िक भेजते हुए दोनों रूप में नहीं दिखा। दोनों को जोड़ने के लिए नेटवर्क मॉनिटरिंग शुरू करें।</string>
 
-    <string name="ux_home_greeting">एक जाँच चुनें</string>
     <string name="ux_home_tile_reports">रिपोर्ट</string>
     <string name="ux_home_tile_check">फ़ाइल जाँचें</string>
     <string name="ux_home_version">संस्करण %1$s</string>

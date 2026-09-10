@@ -139,9 +139,6 @@ object TlsInspectionComposition {
         }
     }
 
-    /** Legacy preflight hook; traffic starts only through NetworkMonitor's active VPN request. */
-    internal fun operationalStartIsRejected(): TlsInspectionStartRejection? = null
-
     internal fun currentTunnelConfiguration(): app.apksentinel.networkmonitor.TlsInspectionTunnelConfiguration = synchronized(lock) {
         val consent = sessionConsent
         if (!advancedEnabled || !sessionConsentAcknowledged || consent == null || selectedPackages.isEmpty()) {

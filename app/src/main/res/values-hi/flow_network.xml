@@ -24,7 +24,6 @@
     <string name="firewall_domain_bound">डोमेन नियम सक्रिय: इस नाम के लिए %1$d पते दिखे।</string>
     <string name="firewall_domain_unbound">डोमेन नियम प्रतीक्षा में: इस नाम को हल होते अभी नहीं देखा गया, इसलिए इसे लागू नहीं किया जा सकता।</string>
     <string name="firewall_domain_no_session">डोमेन नियम प्रतीक्षा में: नेटवर्क मॉनिटरिंग शुरू करें ताकि यह नाम किसी पते से मिलाया जा सके।</string>
-    <string name="firewall_domain_names_omitted">डोमेन नियम प्रतीक्षा में: वेब पता रिकॉर्डिंग बंद है, इसलिए नाम मिलाए नहीं जा सकते।</string>
     <string name="destinations_title">ट्रैफ़िक कहाँ गया</string>
     <string name="destinations_body">वे पते जो साथ में हल होते दिखे, ताकि आप जान सकें कि कौन से एंडपॉइंट एक ही गंतव्य के हैं। यह नहीं बताता कि उनका मालिक कौन है।</string>
     <string name="destinations_named">%1$s — %2$d पते</string>

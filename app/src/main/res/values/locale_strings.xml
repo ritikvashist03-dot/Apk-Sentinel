@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="onboarding_language_title">Choose your language</string>
-    <string name="onboarding_language_body">You can change this later in Privacy.</string>
-    <string name="onboarding_language_required">Choose a language to continue.</string>
     <string name="privacy_language_title">Language</string>
     <string name="privacy_language_body">Choose how APK Sentinel displays its interface. This does not change inspection results or erase app data.</string>
     <string name="language_system_default">System default</string>
